@@ -1,176 +1,279 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SuZanne Cottrell is a Literary Marketing Strategist helping authors turn great books into visible, memorable brands through strategic marketing and author branding.">
-    <title>SuZanne Cottrell | Literary Marketing Strategist for Authors</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SuZanne Cottrell is a Literary Marketing Strategist helping authors turn great books into visible, memorable brands through strategic marketing and author branding.">
+<title>SuZanne Cottrell | Literary Marketing Strategist for Authors</title>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary-blue: #1e3a5f;
+    --secondary-blue: #4a6fa5;
+    --light-blue: #e8f0f8;
+    --white: #ffffff;
+    --off-white: #fafbfc;
+    --text-dark: #2c3e50;
+    --text-light: #5a6c7d;
+    --border-color: #e0e6ed;
+    --font-heading: Georgia, 'Times New Roman', serif;
+    --font-body: 'Bree Serif', Georgia, serif;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 6rem;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--text-dark); line-height: 1.7; background: var(--white); overflow-x: hidden; }
+h1, h2, h3 { font-family: var(--font-heading); font-weight: 400; color: var(--primary-blue); margin-bottom: var(--space-sm); }
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); }
+p { margin-bottom: var(--space-sm); }
+a { color: var(--secondary-blue); text-decoration: none; transition: 0.2s ease; }
+a:hover { color: var(--primary-blue); }
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); }
+.section { padding: var(--space-xl) 0; }
+.bg-light { background: var(--off-white); }
+.bg-primary { background: var(--primary-blue); color: var(--white); }
+.bg-primary h1, .bg-primary h2 { color: var(--white); }
+.text-center { text-align: center; }
+.mt-4 { margin-top: var(--space-md); }
+
+.site-header { position: sticky; top: 0; z-index: 1000; background: var(--white); box-shadow: 0 2px 10px rgba(30,58,95,0.1); }
+.main-nav { padding: var(--space-sm) 0; }
+.nav-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); display: flex; justify-content: space-between; align-items: center; }
+.logo-img { height: 50px; width: auto; max-width: 200px; object-fit: contain; }
+.nav-menu { display: flex; align-items: center; gap: var(--space-md); }
+.nav-links { display: flex; list-style: none; gap: var(--space-md); }
+.nav-link { font-family: var(--font-heading); color: var(--text-dark); position: relative; padding: 0.5rem 0; }
+.nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary-blue); transition: 0.4s ease; }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.mobile-menu-toggle { display: none; flex-direction: column; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 1001; }
+.hamburger-line { width: 25px; height: 2px; background: var(--primary-blue); margin: 3px 0; transition: 0.2s ease; }
+
+.btn { display: inline-block; padding: 0.875rem 2rem; font-family: var(--font-heading); border: 2px solid transparent; border-radius: var(--radius-sm); cursor: pointer; transition: 0.4s ease; text-decoration: none; }
+.btn-primary { background: var(--primary-blue); color: var(--white); border-color: var(--primary-blue); }
+.btn-primary:hover { background: var(--secondary-blue); border-color: var(--secondary-blue); color: var(--white); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(30,58,95,0.3); }
+.btn-white { background: var(--white); color: var(--primary-blue); border-color: var(--white); }
+.btn-white:hover { background: transparent; color: var(--white); transform: translateY(-2px); }
+.btn-outline-white { background: transparent; color: var(--white); border-color: var(--white); }
+.btn-outline-white:hover { background: var(--white); color: var(--primary-blue); transform: translateY(-2px); }
+
+.hero { min-height: 90vh; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding: var(--space-lg) var(--space-md); }
+.hero-content { max-width: 900px; }
+.hero-name { font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 2px; margin-bottom: var(--space-xs); opacity: 0.9; }
+.hero-title { font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: var(--space-md); opacity: 0.8; }
+.hero-headline { color: var(--white); margin-bottom: var(--space-md); font-style: italic; }
+.hero-text { font-size: 1.2rem; line-height: 1.8; margin-bottom: var(--space-md); max-width: 800px; margin-left: auto; margin-right: auto; }
+.hero-buttons { display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap; }
+
+.two-column { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); align-items: center; }
+.image-wrapper { overflow: hidden; border-radius: var(--radius-md); box-shadow: 0 20px 40px rgba(30,58,95,0.15); }
+.profile-image { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
+.image-wrapper:hover .profile-image { transform: scale(1.05); }
+.section-heading { margin-bottom: var(--space-md); position: relative; padding-bottom: var(--space-sm); }
+.section-heading::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background: var(--secondary-blue); }
+.text-center .section-heading::after { left: 50%; transform: translateX(-50%); }
+.section-text { font-size: 1.1rem; color: var(--text-light); margin-bottom: var(--space-md); }
+
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+.service-card { background: var(--white); padding: var(--space-md); border-radius: var(--radius-md); box-shadow: 0 4px 20px rgba(30,58,95,0.08); transition: 0.4s ease; border: 1px solid var(--border-color); }
+.service-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(30,58,95,0.15); border-color: var(--secondary-blue); }
+.service-title { font-size: 1.4rem; margin-bottom: var(--space-xs); }
+.service-description { color: var(--text-light); }
+
+.principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+.principle-item { text-align: center; padding: var(--space-md); }
+.principle-number { font-family: var(--font-heading); font-size: 3rem; color: var(--light-blue); font-weight: bold; line-height: 1; margin-bottom: var(--space-xs); }
+.principle-title { color: var(--primary-blue); margin-bottom: var(--space-xs); }
+
+.cta-section { padding: var(--space-xl) var(--space-md); }
+.cta-heading { color: var(--white); margin-bottom: var(--space-md); }
+.cta-text { font-size: 1.2rem; max-width: 700px; margin: 0 auto var(--space-md); opacity: 0.9; }
+
+.site-footer { background: var(--primary-blue); color: var(--white); padding: var(--space-xl) 0 var(--space-md); }
+.footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-lg); margin-bottom: var(--space-lg); }
+.footer-logo { height: 40px; margin-bottom: var(--space-sm); filter: brightness(0) invert(1); }
+.footer-name { font-family: var(--font-heading); font-size: 1.3rem; color: var(--white); }
+.footer-title, .footer-location { opacity: 0.85; font-size: 0.95rem; }
+.footer-nav h4, .footer-contact h4, .footer-legal h4 { font-family: var(--font-heading); color: var(--white); margin-bottom: var(--space-sm); }
+.footer-nav ul, .footer-legal ul { list-style: none; }
+.footer-nav li, .footer-legal li { margin-bottom: 0.5rem; }
+.footer-nav a, .footer-contact a, .footer-legal a { color: rgba(255,255,255,0.8); }
+.footer-nav a:hover, .footer-contact a:hover, .footer-legal a:hover { color: var(--white); }
+.footer-bottom { text-align: center; padding-top: var(--space-md); border-top: 1px solid rgba(255,255,255,0.2); opacity: 0.7; font-size: 0.9rem; }
+
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 968px) {
+    .nav-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 400px; height: 100vh; background: var(--white); flex-direction: column; padding: 100px var(--space-md) var(--space-md); transition: 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.1); align-items: flex-start; gap: var(--space-md); }
+    .nav-menu.active { right: 0; }
+    .nav-links { flex-direction: column; width: 100%; gap: var(--space-sm); }
+    .mobile-menu-toggle { display: flex; }
+    .mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
+    .mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+    .two-column { grid-template-columns: 1fr; gap: var(--space-md); }
+    .footer-content { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+    .services-grid, .principles-grid { grid-template-columns: 1fr; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    .footer-logo { margin: 0 auto var(--space-sm); }
+    .btn { width: 100%; margin-bottom: var(--space-xs); }
+    .hero-buttons { flex-direction: column; width: 100%; }
+}
+</style>
 </head>
 <body>
-    <header class="site-header">
-        <nav class="main-nav">
-            <div class="nav-container">
-                <a href="index.html" class="logo-link">
-                    <img src="logo.png" alt="SuZanne Cottrell Logo" class="logo-img">
-                </a>
-                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-                <div class="nav-menu">
-                    <ul class="nav-links">
-                        <li><a href="index.html" class="nav-link active">Home</a></li>
-                        <li><a href="about.html" class="nav-link">About</a></li>
-                        <li><a href="services.html" class="nav-link">Services</a></li>
-                        <li><a href="consultation.html" class="nav-link">Book a Consultation</a></li>
-                        <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary nav-cta">Let's Work Together</a>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <section class="hero" style="background-image: linear-gradient(rgba(30, 58, 95, 0.7), rgba(30, 58, 95, 0.8)), url('banner.png');">
-            <div class="hero-content">
-                <p class="hero-name fade-up">SuZanne Cottrell</p>
-                <p class="hero-title fade-up">Literary Marketing Strategist</p>
-                <h1 class="hero-headline fade-up">Helping Authors Turn Great Books Into Visible, Memorable Brands.</h1>
-                <p class="hero-text fade-up">Your book deserves more than to simply exist. It deserves to be discovered, remembered, and connected with the readers who are waiting for it. Through thoughtful strategy, purposeful marketing, and a clear understanding of your goals, I help authors create stronger visibility for both their books and their brands.</p>
-                <div class="hero-buttons fade-up">
-                    <a href="services.html" class="btn btn-white">Explore My Services</a>
-                    <a href="contact.html" class="btn btn-outline-white">Get in Touch</a>
-                </div>
-            </div>
-        </section>
+<header class="site-header">
+<nav class="main-nav">
+<div class="nav-container">
+<a href="index.html"><img src="logo.png" alt="SuZanne Cottrell Logo" class="logo-img"></a>
+<button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+<span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+</button>
+<div class="nav-menu">
+<ul class="nav-links">
+<li><a href="index.html" class="nav-link active">Home</a></li>
+<li><a href="about.html" class="nav-link">About</a></li>
+<li><a href="services.html" class="nav-link">Services</a></li>
+<li><a href="consultation.html" class="nav-link">Book a Consultation</a></li>
+<li><a href="contact.html" class="nav-link">Contact</a></li>
+</ul>
+<a href="contact.html" class="btn btn-primary">Let's Work Together</a>
+</div>
+</div>
+</nav>
+</header>
 
-        <section class="section introduction">
-            <div class="container">
-                <div class="two-column">
-                    <div class="column image-column fade-up">
-                        <div class="image-wrapper">
-                            <img src="suzanne.png" alt="SuZanne Cottrell, Literary Marketing Strategist" class="profile-image">
-                        </div>
-                    </div>
-                    <div class="column content-column fade-up">
-                        <h2 class="section-heading">Marketing Is Not Just About Selling a Book. It's About Building a Presence.</h2>
-                        <div class="section-text">
-                            <p>In a crowded publishing landscape, simply publishing a book is no longer enough. Authors need visibility, clarity, and a strategy that helps them connect with the right audience.</p>
-                            <p>As a Literary Marketing Strategist, I work with authors to identify opportunities, strengthen their positioning, and create thoughtful approaches to book promotion and author visibility. Every author, every book, and every audience is different. That is why strategy matters.</p>
-                        </div>
-                        <a href="about.html" class="btn btn-primary">Meet SuZanne</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<main>
+<section class="hero" style="background-image: linear-gradient(rgba(30,58,95,0.7), rgba(30,58,95,0.85)), url('banner.png');">
+<div class="hero-content">
+<p class="hero-name fade-up">SuZanne Cottrell</p>
+<p class="hero-title fade-up">Literary Marketing Strategist</p>
+<h1 class="hero-headline fade-up">Helping Authors Turn Great Books Into Visible, Memorable Brands.</h1>
+<p class="hero-text fade-up">Your book deserves more than to simply exist. It deserves to be discovered, remembered, and connected with the readers who are waiting for it. Through thoughtful strategy, purposeful marketing, and a clear understanding of your goals, I help authors create stronger visibility for both their books and their brands.</p>
+<div class="hero-buttons fade-up">
+<a href="services.html" class="btn btn-white">Explore My Services</a>
+<a href="contact.html" class="btn btn-outline-white">Get in Touch</a>
+</div>
+</div>
+</section>
 
-        <section class="section services-preview bg-light">
-            <div class="container">
-                <h2 class="section-heading text-center fade-up">Strategic Support for Every Stage of Your Author Journey</h2>
-                <div class="services-grid">
-                    <div class="service-card fade-up">
-                        <h3 class="service-title">Book Marketing Strategy</h3>
-                        <p class="service-description">Develop a clear and purposeful approach for promoting your book and reaching the readers most likely to connect with it.</p>
-                    </div>
-                    <div class="service-card fade-up">
-                        <h3 class="service-title">Author Brand Strategy</h3>
-                        <p class="service-description">Create a stronger and more recognizable author presence that supports both your current work and your long-term career.</p>
-                    </div>
-                    <div class="service-card fade-up">
-                        <h3 class="service-title">Book Launch Strategy</h3>
-                        <p class="service-description">Build a structured and strategic plan designed to create momentum before, during, and after your book launch.</p>
-                    </div>
-                    <div class="service-card fade-up">
-                        <h3 class="service-title">Audience Growth & Visibility</h3>
-                        <p class="service-description">Identify opportunities to expand your reach, strengthen your presence, and connect more effectively with your target audience.</p>
-                    </div>
-                </div>
-                <div class="text-center mt-4">
-                    <a href="services.html" class="btn btn-primary">View All Services</a>
-                </div>
-            </div>
-        </section>
+<section class="section">
+<div class="container">
+<div class="two-column">
+<div class="fade-up"><div class="image-wrapper"><img src="suzanne.png" alt="SuZanne Cottrell" class="profile-image"></div></div>
+<div class="fade-up">
+<h2 class="section-heading">Marketing Is Not Just About Selling a Book. It's About Building a Presence.</h2>
+<p class="section-text">In a crowded publishing landscape, simply publishing a book is no longer enough. Authors need visibility, clarity, and a strategy that helps them connect with the right audience.</p>
+<p class="section-text">As a Literary Marketing Strategist, I work with authors to identify opportunities, strengthen their positioning, and create thoughtful approaches to book promotion and author visibility. Every author, every book, and every audience is different. That is why strategy matters.</p>
+<a href="about.html" class="btn btn-primary">Meet SuZanne</a>
+</div>
+</div>
+</div>
+</section>
 
-        <section class="section why-strategy">
-            <div class="container">
-                <h2 class="section-heading text-center fade-up">A Great Book Deserves a Thoughtful Strategy.</h2>
-                <p class="section-subheading text-center fade-up">Successful literary marketing is not about posting everywhere or following random trends.</p>
-                <div class="principles-grid">
-                    <div class="principle-item fade-up">
-                        <div class="principle-number">01</div>
-                        <h3 class="principle-title">Clarity</h3>
-                        <p>Understanding what makes the author and book unique.</p>
-                    </div>
-                    <div class="principle-item fade-up">
-                        <div class="principle-number">02</div>
-                        <h3 class="principle-title">Connection</h3>
-                        <p>Reaching readers who are genuinely interested in the author's work.</p>
-                    </div>
-                    <div class="principle-item fade-up">
-                        <div class="principle-number">03</div>
-                        <h3 class="principle-title">Consistency</h3>
-                        <p>Building visibility through intentional and sustainable marketing efforts.</p>
-                    </div>
-                    <div class="principle-item fade-up">
-                        <div class="principle-number">04</div>
-                        <h3 class="principle-title">Strategy</h3>
-                        <p>Making decisions based on goals rather than guesswork.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="section bg-light">
+<div class="container">
+<h2 class="section-heading text-center fade-up">Strategic Support for Every Stage of Your Author Journey</h2>
+<div class="services-grid">
+<div class="service-card fade-up"><h3 class="service-title">Book Marketing Strategy</h3><p class="service-description">Develop a clear and purposeful approach for promoting your book and reaching the readers most likely to connect with it.</p></div>
+<div class="service-card fade-up"><h3 class="service-title">Author Brand Strategy</h3><p class="service-description">Create a stronger and more recognizable author presence that supports both your current work and your long-term career.</p></div>
+<div class="service-card fade-up"><h3 class="service-title">Book Launch Strategy</h3><p class="service-description">Build a structured and strategic plan designed to create momentum before, during, and after your book launch.</p></div>
+<div class="service-card fade-up"><h3 class="service-title">Audience Growth & Visibility</h3><p class="service-description">Identify opportunities to expand your reach, strengthen your presence, and connect more effectively with your target audience.</p></div>
+</div>
+<div class="text-center mt-4"><a href="services.html" class="btn btn-primary">View All Services</a></div>
+</div>
+</section>
 
-        <section class="section cta-section bg-primary">
-            <div class="container text-center">
-                <h2 class="cta-heading fade-up">Ready to Give Your Book the Visibility It Deserves?</h2>
-                <p class="cta-text fade-up">Whether you are preparing for a launch, looking to strengthen your author brand, or searching for a clearer marketing direction, the right strategy can help you move forward with confidence.</p>
-                <a href="consultation.html" class="btn btn-white fade-up">Book a Consultation</a>
-            </div>
-        </section>
-    </main>
+<section class="section">
+<div class="container">
+<h2 class="section-heading text-center fade-up">A Great Book Deserves a Thoughtful Strategy.</h2>
+<div class="principles-grid">
+<div class="principle-item fade-up"><div class="principle-number">01</div><h3 class="principle-title">Clarity</h3><p>Understanding what makes the author and book unique.</p></div>
+<div class="principle-item fade-up"><div class="principle-number">02</div><h3 class="principle-title">Connection</h3><p>Reaching readers who are genuinely interested in the author's work.</p></div>
+<div class="principle-item fade-up"><div class="principle-number">03</div><h3 class="principle-title">Consistency</h3><p>Building visibility through intentional and sustainable marketing efforts.</p></div>
+<div class="principle-item fade-up"><div class="principle-number">04</div><h3 class="principle-title">Strategy</h3><p>Making decisions based on goals rather than guesswork.</p></div>
+</div>
+</div>
+</section>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="logo.png" alt="SuZanne Cottrell Logo" class="footer-logo">
-                    <p class="footer-name">SuZanne Cottrell</p>
-                    <p class="footer-title">Literary Marketing Strategist</p>
-                    <p class="footer-location">New York, USA</p>
-                </div>
-                <div class="footer-nav">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="consultation.html">Book a Consultation</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <a href="mailto:suzannecottrell2@gmail.com">suzannecottrell2@gmail.com</a>
-                </div>
-                <div class="footer-legal">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 SuZanne Cottrell. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+<section class="section cta-section bg-primary">
+<div class="container text-center">
+<h2 class="cta-heading fade-up">Ready to Give Your Book the Visibility It Deserves?</h2>
+<p class="cta-text fade-up">Whether you are preparing for a launch, looking to strengthen your author brand, or searching for a clearer marketing direction, the right strategy can help you move forward with confidence.</p>
+<a href="consultation.html" class="btn btn-white fade-up">Book a Consultation</a>
+</div>
+</section>
+</main>
 
-    <script src="script.js"></script>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-content">
+<div>
+<img src="logo.png" alt="SuZanne Cottrell Logo" class="footer-logo">
+<p class="footer-name">SuZanne Cottrell</p>
+<p class="footer-title">Literary Marketing Strategist</p>
+<p class="footer-location">New York, USA</p>
+</div>
+<div class="footer-nav">
+<h4>Navigation</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="consultation.html">Book a Consultation</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="footer-contact">
+<h4>Contact</h4>
+<a href="mailto:suzannecottrell2@gmail.com">suzannecottrell2@gmail.com</a>
+</div>
+<div class="footer-legal">
+<h4>Legal</h4>
+<ul>
+<li><a href="privacy-policy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms & Conditions</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 SuZanne Cottrell. All Rights Reserved.</p></div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+});
+</script>
 </body>
 </html>
