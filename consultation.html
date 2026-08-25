@@ -1,0 +1,166 @@
+<!-- consultation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book a literary marketing consultation with SuZanne Cottrell. Discuss your book, marketing challenges, and strategic goals.">
+    <meta name="keywords" content="Book a Consultation, Literary Marketing Consultation, Author Marketing Consultation, Book Marketing Strategy Session">
+    <title>Book a Literary Marketing Consultation | SuZanne Cottrell</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="./index.html" class="logo-link">
+                    <img src="assets/suzanne.png" alt="SuZanne Cottrell Literary Marketing Strategist Logo" class="logo-img">
+                </a>
+                
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="./index.html" class="nav-link">Home</a></li>
+                        <li><a href="./about.html" class="nav-link">About</a></li>
+                        <li><a href="./services.html" class="nav-link">Services</a></li>
+                        <li><a href="./consultation.html" class="nav-link active">Book a Consultation</a></li>
+                        <li><a href="./contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    <a href="./contact.html" class="btn btn-primary nav-cta">Let's Work Together</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero" style="background-image: linear-gradient(rgba(30, 58, 95, 0.8), rgba(30, 58, 95, 0.9)), url('assets/suzanne.png');">
+            <div class="page-hero-content">
+                <h1 class="page-hero-title fade-up">Let's Talk About Your Book and Your Goals.</h1>
+                <p class="page-hero-subtitle fade-up">Sometimes the most valuable next step is gaining clarity. A consultation provides an opportunity to discuss your book, your current marketing efforts, your challenges, and the direction you want to take next.</p>
+            </div>
+        </section>
+
+        <!-- Consultation Form Section -->
+        <section class="section consultation-form-section">
+            <div class="container narrow">
+                <div class="form-wrapper fade-up">
+                    <form id="consultationForm" class="contact-form" action="https://formspree.io/f/xbgrvrna" method="POST">
+                        <div class="form-group">
+                            <label for="consultName">Full Name *</label>
+                            <input type="text" id="consultName" name="name" required aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="consultEmail">Email Address *</label>
+                            <input type="email" id="consultEmail" name="email" required aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookTitle">Book Title</label>
+                            <input type="text" id="bookTitle" name="book_title">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookGenre">Book Genre</label>
+                            <input type="text" id="bookGenre" name="book_genre" placeholder="e.g., Literary Fiction, Romance, Thriller, Non-fiction">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="publishingStatus">Publishing Status</label>
+                            <select id="publishingStatus" name="publishing_status">
+                                <option value="">Select your current status</option>
+                                <option value="writing">Currently Writing</option>
+                                <option value="editing">Editing/Pre-publication</option>
+                                <option value="querying">Querying Agents</option>
+                                <option value="contract">Under Contract</option>
+                                <option value="self-pub-preparing">Preparing to Self-Publish</option>
+                                <option value="recently-published">Recently Published</option>
+                                <option value="previously-published">Previously Published</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="supportNeeded">What would you like strategic support with? *</label>
+                            <textarea id="supportNeeded" name="support_needed" rows="3" required aria-required="true" placeholder="e.g., Book launch planning, author branding, visibility strategy..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookDescription">Tell me briefly about your book or current marketing goals</label>
+                            <textarea id="bookDescription" name="book_description" rows="4" placeholder="A brief description of your book, target audience, or what you're hoping to achieve..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="biggestChallenge">What is your biggest challenge right now? *</label>
+                            <textarea id="biggestChallenge" name="biggest_challenge" rows="3" required aria-required="true" placeholder="e.g., I don't know where to start, my book isn't getting visibility, I'm overwhelmed by options..."></textarea>
+                        </div>
+
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary btn-large">Request a Consultation</button>
+                            <div class="form-status" role="status" aria-live="polite"></div>
+                        </div>
+                    </form>
+
+                    <div class="success-message" style="display: none;">
+                        <div class="success-content">
+                            <h3>Thank You</h3>
+                            <p>Thank you for reaching out. Your consultation request has been received. SuZanne will review your information and get back to you as soon as possible.</p>
+                            <a href="./index.html" class="btn btn-primary">Return to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <p class="footer-name">SuZanne Cottrell</p>
+                    <p class="footer-title">Literary Marketing Strategist</p>
+                    <p class="footer-location">New York, USA</p>
+                </div>
+                
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./services.html">Services</a></li>
+                        <li><a href="./consultation.html">Book a Consultation</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <a href="mailto:suzannecottrell2@gmail.com">suzannecottrell2@gmail.com</a>
+                </div>
+
+                <div class="footer-legal">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="./terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 SuZanne Cottrell. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
