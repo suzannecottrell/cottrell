@@ -2,165 +2,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Book a literary marketing consultation with SuZanne Cottrell. Discuss your book, marketing challenges, and strategic goals.">
-    <meta name="keywords" content="Book a Consultation, Literary Marketing Consultation, Author Marketing Consultation, Book Marketing Strategy Session">
-    <title>Book a Literary Marketing Consultation | SuZanne Cottrell</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Book a literary marketing consultation with SuZanne Cottrell. Discuss your book, marketing challenges, and strategic goals.">
+<title>Book a Literary Marketing Consultation | SuZanne Cottrell</title>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+<style>
+:root {
+--primary-blue: #1e3a5f;
+--secondary-blue: #4a6fa5;
+--light-blue: #e8f0f8;
+--white: #ffffff;
+--off-white: #fafbfc;
+--text-dark: #2c3e50;
+--text-light: #5a6c7d;
+--border-color: #e0e6ed;
+--font-heading: Georgia, 'Times New Roman', serif;
+--font-body: 'Bree Serif', Georgia, serif;
+--space-xs: 0.5rem;
+--space-sm: 1rem;
+--space-md: 2rem;
+--space-lg: 4rem;
+--space-xl: 6rem;
+--radius-sm: 4px;
+--radius-md: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--text-dark); line-height: 1.7; background: var(--white); overflow-x: hidden; }
+h1, h2, h3 { font-family: var(--font-heading); font-weight: 400; color: var(--primary-blue); margin-bottom: var(--space-sm); line-height: 1.3; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+p { margin-bottom: var(--space-sm); }
+a { color: var(--secondary-blue); text-decoration: none; transition: 0.2s ease; }
+a:hover { color: var(--primary-blue); }
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); }
+.section { padding: var(--space-xl) 0; }
+.bg-light { background: var(--off-white); }
+.site-header { position: sticky; top: 0; z-index: 1000; background: var(--white); box-shadow: 0 2px 10px rgba(30,58,95,0.1); }
+.main-nav { padding: var(--space-sm) 0; }
+.nav-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); display: flex; justify-content: space-between; align-items: center; }
+.logo-img { height: 55px; width: auto; max-width: 220px; object-fit: contain; }
+.nav-menu { display: flex; align-items: center; gap: var(--space-md); }
+.nav-links { display: flex; list-style: none; gap: var(--space-md); }
+.nav-link { font-family: var(--font-heading); color: var(--text-dark); position: relative; padding: 0.5rem 0; font-size: 1rem; }
+.nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary-blue); transition: 0.4s ease; }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-link:hover { color: var(--primary-blue); }
+.mobile-menu-toggle { display: none; flex-direction: column; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 1001; }
+.hamburger-line { width: 25px; height: 2px; background: var(--primary-blue); margin: 3px 0; transition: 0.2s ease; display: block; }
+.btn { display: inline-block; padding: 0.875rem 2rem; font-family: var(--font-heading); border: 2px solid transparent; border-radius: var(--radius-sm); cursor: pointer; transition: 0.4s ease; text-decoration: none; font-size: 1rem; }
+.btn-primary { background: var(--primary-blue); color: var(--white); border-color: var(--primary-blue); }
+.btn-primary:hover { background: var(--secondary-blue); border-color: var(--secondary-blue); color: var(--white); transform: translateY(-2px); }
+.page-hero { background: var(--primary-blue); padding: var(--space-xl) var(--space-md); text-align: center; position: relative; overflow: hidden; }
+.page-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.12; }
+.page-hero-inner { position: relative; z-index: 2; }
+.page-hero h1 { color: var(--white); margin-bottom: var(--space-sm); }
+.page-hero-subtitle { font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9; color: var(--white); }
+.consultation-layout { display: grid; grid-template-columns: 1fr 1.8fr; gap: var(--space-lg); align-items: start; }
+.consult-image-wrapper { overflow: hidden; border-radius: var(--radius-md); box-shadow: 0 20px 40px rgba(30,58,95,0.15); position: sticky; top: 100px; }
+.consult-image { width: 100%; height: 600px; object-fit: cover; object-position: top; display: block; transition: 0.6s ease; }
+.consult-image-wrapper:hover .consult-image { transform: scale(1.03); }
+.form-wrapper { background: var(--white); padding: var(--space-lg); border-radius: var(--radius-md); box-shadow: 0 8px 30px rgba(30,58,95,0.1); border: 1px solid var(--border-color); }
+.form-wrapper h2 { color: var(--primary-blue); margin-bottom: 0.5rem; }
+.form-intro { color: var(--text-light); margin-bottom: var(--space-md); }
+.form-group { margin-bottom: var(--space-md); }
+.form-group label { display: block; font-family: var(--font-heading); color: var(--primary-blue); margin-bottom: 0.5rem; font-size: 0.95rem; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem; color: var(--text-dark); background: var(--white); transition: 0.2s ease; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--secondary-blue); box-shadow: 0 0 0 3px rgba(74,111,165,0.12); }
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.btn-submit { width: 100%; padding: 1.1rem; font-size: 1.1rem; background: var(--primary-blue); color: var(--white); border: none; border-radius: var(--radius-sm); font-family: var(--font-heading); cursor: pointer; transition: 0.4s ease; margin-top: var(--space-sm); }
+.btn-submit:hover { background: var(--secondary-blue); transform: translateY(-2px); }
+.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.form-status { margin-top: var(--space-sm); font-size: 0.95rem; min-height: 1.5rem; }
+.form-status.sending { color: var(--secondary-blue); }
+.form-status.error { color: #c0392b; }
+.success-message { display: none; text-align: center; padding: var(--space-lg); }
+.success-message h3 { color: var(--primary-blue); margin-bottom: var(--space-sm); font-size: 2rem; }
+.success-message p { color: var(--text-light); font-size: 1.1rem; margin-bottom: var(--space-md); }
+.site-footer { background: var(--primary-blue); color: var(--white); padding: var(--space-xl) 0 var(--space-md); }
+.footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-lg); margin-bottom: var(--space-lg); }
+.footer-logo { height: 40px; margin-bottom: var(--space-sm); filter: brightness(0) invert(1); }
+.footer-name { font-family: var(--font-heading); font-size: 1.3rem; color: var(--white); margin-bottom: 0.25rem; }
+.footer-title { opacity: 0.85; font-size: 0.95rem; margin-bottom: 0.25rem; }
+.footer-location { opacity: 0.7; font-size: 0.9rem; }
+.site-footer h4 { font-family: var(--font-heading); color: var(--white); margin-bottom: var(--space-sm); font-size: 1.1rem; }
+.site-footer ul { list-style: none; }
+.site-footer li { margin-bottom: 0.5rem; }
+.site-footer a { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+.site-footer a:hover { color: var(--white); }
+.footer-bottom { text-align: center; padding-top: var(--space-md); border-top: 1px solid rgba(255,255,255,0.2); opacity: 0.7; font-size: 0.9rem; }
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 968px) {
+.nav-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 400px; height: 100vh; background: var(--white); flex-direction: column; padding: 100px var(--space-md) var(--space-md); transition: 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.1); align-items: flex-start; gap: var(--space-md); overflow-y: auto; }
+.nav-menu.active { right: 0; }
+.nav-links { flex-direction: column; width: 100%; gap: var(--space-sm); }
+.mobile-menu-toggle { display: flex; }
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+.consultation-layout { grid-template-columns: 1fr; }
+.consult-image-wrapper { position: static; }
+.consult-image { height: 380px; }
+.footer-content { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+}
+@media (max-width: 640px) {
+.form-row { grid-template-columns: 1fr; }
+.footer-content { grid-template-columns: 1fr; text-align: center; }
+.footer-logo { margin: 0 auto var(--space-sm); }
+.form-wrapper { padding: var(--space-md); }
+}
+</style>
 </head>
 <body>
-    <header class="site-header">
-        <nav class="main-nav" role="navigation" aria-label="Main navigation">
-            <div class="nav-container">
-                <a href="./index.html" class="logo-link">
-                    <img src="assets/suzanne.png" alt="SuZanne Cottrell Literary Marketing Strategist Logo" class="logo-img">
-                </a>
-                
-                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
 
-                <div class="nav-menu">
-                    <ul class="nav-links">
-                        <li><a href="./index.html" class="nav-link">Home</a></li>
-                        <li><a href="./about.html" class="nav-link">About</a></li>
-                        <li><a href="./services.html" class="nav-link">Services</a></li>
-                        <li><a href="./consultation.html" class="nav-link active">Book a Consultation</a></li>
-                        <li><a href="./contact.html" class="nav-link">Contact</a></li>
-                    </ul>
-                    <a href="./contact.html" class="btn btn-primary nav-cta">Let's Work Together</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+<header class="site-header">
+<nav class="main-nav">
+<div class="nav-container">
+<a href="index.html"><img src="suzanne.png" alt="SuZanne Cottrell Logo" class="logo-img"></a>
+<button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+</button>
+<div class="nav-menu">
+<ul class="nav-links">
+<li><a href="index.html" class="nav-link">Home</a></li>
+<li><a href="about.html" class="nav-link">About</a></li>
+<li><a href="services.html" class="nav-link">Services</a></li>
+<li><a href="consultation.html" class="nav-link active">Book a Consultation</a></li>
+<li><a href="contact.html" class="nav-link">Contact</a></li>
+</ul>
+<a href="contact.html" class="btn btn-primary">Let's Work Together</a>
+</div>
+</div>
+</nav>
+</header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="page-hero" style="background-image: linear-gradient(rgba(30, 58, 95, 0.8), rgba(30, 58, 95, 0.9)), url('assets/suzanne.png');">
-            <div class="page-hero-content">
-                <h1 class="page-hero-title fade-up">Let's Talk About Your Book and Your Goals.</h1>
-                <p class="page-hero-subtitle fade-up">Sometimes the most valuable next step is gaining clarity. A consultation provides an opportunity to discuss your book, your current marketing efforts, your challenges, and the direction you want to take next.</p>
-            </div>
-        </section>
+<main>
 
-        <!-- Consultation Form Section -->
-        <section class="section consultation-form-section">
-            <div class="container narrow">
-                <div class="form-wrapper fade-up">
-                    <form id="consultationForm" class="contact-form" action="https://formspree.io/f/xbgrvrna" method="POST">
-                        <div class="form-group">
-                            <label for="consultName">Full Name *</label>
-                            <input type="text" id="consultName" name="name" required aria-required="true">
-                        </div>
+<section class="page-hero">
+<img src="suzanne.png" alt="" class="page-hero-bg">
+<div class="page-hero-inner">
+<h1 class="fade-up">Let's Talk About Your Book and Your Goals.</h1>
+<p class="page-hero-subtitle fade-up">Sometimes the most valuable next step is gaining clarity. A consultation provides an opportunity to discuss your book, your current marketing efforts, your challenges, and the direction you want to take next.</p>
+</div>
+</section>
 
-                        <div class="form-group">
-                            <label for="consultEmail">Email Address *</label>
-                            <input type="email" id="consultEmail" name="email" required aria-required="true">
-                        </div>
+<section class="section bg-light">
+<div class="container">
+<div class="consultation-layout">
+<div class="fade-up">
+<div class="consult-image-wrapper">
+<img src="suzanne.png" alt="SuZanne Cottrell Literary Marketing Strategist" class="consult-image">
+</div>
+</div>
+<div class="fade-up">
+<div class="form-wrapper">
+<h2>Request a Consultation</h2>
+<p class="form-intro">Fill in the details below and SuZanne will review your information and get back to you as soon as possible.</p>
+<form id="consultationForm" action="https://formspree.io/f/xbgrvrna" method="POST">
+<div class="form-row">
+<div class="form-group">
+<label for="consultName">Full Name *</label>
+<input type="text" id="consultName" name="name" required placeholder="Your full name">
+</div>
+<div class="form-group">
+<label for="consultEmail">Email Address *</label>
+<input type="email" id="consultEmail" name="email" required placeholder="your@email.com">
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="bookTitle">Book Title</label>
+<input type="text" id="bookTitle" name="book_title" placeholder="Your book title">
+</div>
+<div class="form-group">
+<label for="bookGenre">Book Genre</label>
+<input type="text" id="bookGenre" name="book_genre" placeholder="e.g. Literary Fiction, Thriller">
+</div>
+</div>
+<div class="form-group">
+<label for="publishingStatus">Publishing Status</label>
+<select id="publishingStatus" name="publishing_status">
+<option value="">Select your current status</option>
+<option value="writing">Currently Writing</option>
+<option value="editing">Editing / Pre-publication</option>
+<option value="querying">Querying Agents</option>
+<option value="contract">Under Contract</option>
+<option value="self-pub-preparing">Preparing to Self-Publish</option>
+<option value="recently-published">Recently Published</option>
+<option value="previously-published">Previously Published</option>
+</select>
+</div>
+<div class="form-group">
+<label for="supportNeeded">What would you like strategic support with? *</label>
+<textarea id="supportNeeded" name="support_needed" rows="3" required placeholder="e.g. Book launch planning, author branding, visibility strategy..."></textarea>
+</div>
+<div class="form-group">
+<label for="bookDescription">Tell me briefly about your book or current marketing goals</label>
+<textarea id="bookDescription" name="book_description" rows="4" placeholder="A brief description of your book, target audience, or what you hope to achieve..."></textarea>
+</div>
+<div class="form-group">
+<label for="biggestChallenge">What is your biggest challenge right now? *</label>
+<textarea id="biggestChallenge" name="biggest_challenge" rows="3" required placeholder="e.g. I don't know where to start, my book isn't getting visibility..."></textarea>
+</div>
+<button type="submit" class="btn-submit" id="consultSubmitBtn">Request a Consultation</button>
+<div class="form-status" id="consultFormStatus"></div>
+</form>
+<div class="success-message" id="consultSuccess">
+<h3>Thank You</h3>
+<p>Your consultation request has been received. SuZanne will review your information and get back to you as soon as possible.</p>
+<a href="index.html" class="btn btn-primary">Return to Home</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-                        <div class="form-group">
-                            <label for="bookTitle">Book Title</label>
-                            <input type="text" id="bookTitle" name="book_title">
-                        </div>
+</main>
 
-                        <div class="form-group">
-                            <label for="bookGenre">Book Genre</label>
-                            <input type="text" id="bookGenre" name="book_genre" placeholder="e.g., Literary Fiction, Romance, Thriller, Non-fiction">
-                        </div>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-content">
+<div>
+<img src="suzanne.png" alt="SuZanne Cottrell" class="footer-logo">
+<p class="footer-name">SuZanne Cottrell</p>
+<p class="footer-title">Literary Marketing Strategist</p>
+<p class="footer-location">New York, USA</p>
+</div>
+<div><h4>Navigation</h4><ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="consultation.html">Book a Consultation</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul></div>
+<div><h4>Contact</h4><a href="mailto:suzannecottrell2@gmail.com">suzannecottrell2@gmail.com</a></div>
+<div><h4>Legal</h4><ul>
+<li><a href="privacy-policy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms & Conditions</a></li>
+</ul></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 SuZanne Cottrell. All Rights Reserved.</p></div>
+</div>
+</footer>
 
-                        <div class="form-group">
-                            <label for="publishingStatus">Publishing Status</label>
-                            <select id="publishingStatus" name="publishing_status">
-                                <option value="">Select your current status</option>
-                                <option value="writing">Currently Writing</option>
-                                <option value="editing">Editing/Pre-publication</option>
-                                <option value="querying">Querying Agents</option>
-                                <option value="contract">Under Contract</option>
-                                <option value="self-pub-preparing">Preparing to Self-Publish</option>
-                                <option value="recently-published">Recently Published</option>
-                                <option value="previously-published">Previously Published</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="supportNeeded">What would you like strategic support with? *</label>
-                            <textarea id="supportNeeded" name="support_needed" rows="3" required aria-required="true" placeholder="e.g., Book launch planning, author branding, visibility strategy..."></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="bookDescription">Tell me briefly about your book or current marketing goals</label>
-                            <textarea id="bookDescription" name="book_description" rows="4" placeholder="A brief description of your book, target audience, or what you're hoping to achieve..."></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="biggestChallenge">What is your biggest challenge right now? *</label>
-                            <textarea id="biggestChallenge" name="biggest_challenge" rows="3" required aria-required="true" placeholder="e.g., I don't know where to start, my book isn't getting visibility, I'm overwhelmed by options..."></textarea>
-                        </div>
-
-                        <div class="form-submit">
-                            <button type="submit" class="btn btn-primary btn-large">Request a Consultation</button>
-                            <div class="form-status" role="status" aria-live="polite"></div>
-                        </div>
-                    </form>
-
-                    <div class="success-message" style="display: none;">
-                        <div class="success-content">
-                            <h3>Thank You</h3>
-                            <p>Thank you for reaching out. Your consultation request has been received. SuZanne will review your information and get back to you as soon as possible.</p>
-                            <a href="./index.html" class="btn btn-primary">Return to Home</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <p class="footer-name">SuZanne Cottrell</p>
-                    <p class="footer-title">Literary Marketing Strategist</p>
-                    <p class="footer-location">New York, USA</p>
-                </div>
-                
-                <div class="footer-nav">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./about.html">About</a></li>
-                        <li><a href="./services.html">Services</a></li>
-                        <li><a href="./consultation.html">Book a Consultation</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <a href="mailto:suzannecottrell2@gmail.com">suzannecottrell2@gmail.com</a>
-                </div>
-
-                <div class="footer-legal">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="./terms.html">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 SuZanne Cottrell. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="./js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+var menuToggle = document.querySelector('.mobile-menu-toggle');
+var navMenu = document.querySelector('.nav-menu');
+if (menuToggle && navMenu) {
+menuToggle.addEventListener('click', function() {
+var isExpanded = this.getAttribute('aria-expanded') === 'true';
+this.setAttribute('aria-expanded', String(!isExpanded));
+this.classList.toggle('active');
+navMenu.classList.toggle('active');
+document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+});
+}
+document.querySelectorAll('.nav-link').forEach(function(link) {
+link.addEventListener('click', function() { if (navMenu.classList.contains('active')) { menuToggle.click(); } });
+});
+var observer = new IntersectionObserver(function(entries) {
+entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+var consultForm = document.getElementById('consultationForm');
+var consultBtn = document.getElementById('consultSubmitBtn');
+var consultStatus = document.getElementById('consultFormStatus');
+var consultSuccess = document.getElementById('consultSuccess');
+if (consultForm) {
+consultForm.addEventListener('submit', function(e) {
+e.preventDefault();
+consultBtn.disabled = true;
+consultBtn.textContent = 'Sending...';
+consultStatus.textContent = 'Sending your request...';
+consultStatus.className = 'form-status sending';
+fetch(consultForm.action, { method: 'POST', body: new FormData(consultForm), headers: { 'Accept': 'application/json' } })
+.then(function(r) {
+if (r.ok) { consultForm.style.display = 'none'; consultSuccess.style.display = 'block'; }
+else { throw new Error('error'); }
+})
+.catch(function() {
+consultStatus.textContent = 'Something went wrong. Please email suzannecottrell2@gmail.com directly.';
+consultStatus.className = 'form-status error';
+consultBtn.disabled = false;
+consultBtn.textContent = 'Request a Consultation';
+});
+});
+}
+});
+</script>
 </body>
 </html>
