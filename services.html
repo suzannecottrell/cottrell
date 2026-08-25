@@ -2,242 +2,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Strategic literary marketing services for authors including book marketing strategy, author branding, book launch planning, and visibility consulting.">
-    <meta name="keywords" content="Literary Marketing Services, Book Marketing Strategy, Author Brand Strategy, Book Launch Strategy, Author Visibility">
-    <title>Literary Marketing Services for Authors | SuZanne Cottrell</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Strategic literary marketing services for authors including book marketing strategy, author branding, book launch planning, and visibility consulting.">
+<title>Literary Marketing Services for Authors | SuZanne Cottrell</title>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+<style>
+:root {
+--primary-blue: #1e3a5f;
+--secondary-blue: #4a6fa5;
+--light-blue: #e8f0f8;
+--white: #ffffff;
+--off-white: #fafbfc;
+--text-dark: #2c3e50;
+--text-light: #5a6c7d;
+--border-color: #e0e6ed;
+--font-heading: Georgia, 'Times New Roman', serif;
+--font-body: 'Bree Serif', Georgia, serif;
+--space-xs: 0.5rem;
+--space-sm: 1rem;
+--space-md: 2rem;
+--space-lg: 4rem;
+--space-xl: 6rem;
+--radius-sm: 4px;
+--radius-md: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--text-dark); line-height: 1.7; background: var(--white); overflow-x: hidden; }
+h1, h2, h3 { font-family: var(--font-heading); font-weight: 400; color: var(--primary-blue); margin-bottom: var(--space-sm); line-height: 1.3; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+h3 { font-size: clamp(1.2rem, 3vw, 1.6rem); }
+p { margin-bottom: var(--space-sm); }
+a { color: var(--secondary-blue); text-decoration: none; transition: 0.2s ease; }
+a:hover { color: var(--primary-blue); }
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); }
+.section { padding: var(--space-xl) 0; }
+.bg-light { background: var(--off-white); }
+.bg-primary { background: var(--primary-blue); color: var(--white); }
+.bg-primary h2 { color: var(--white); }
+.text-center { text-align: center; }
+.site-header { position: sticky; top: 0; z-index: 1000; background: var(--white); box-shadow: 0 2px 10px rgba(30,58,95,0.1); }
+.main-nav { padding: var(--space-sm) 0; }
+.nav-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); display: flex; justify-content: space-between; align-items: center; }
+.logo-img { height: 55px; width: auto; max-width: 220px; object-fit: contain; }
+.nav-menu { display: flex; align-items: center; gap: var(--space-md); }
+.nav-links { display: flex; list-style: none; gap: var(--space-md); }
+.nav-link { font-family: var(--font-heading); color: var(--text-dark); position: relative; padding: 0.5rem 0; font-size: 1rem; }
+.nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary-blue); transition: 0.4s ease; }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-link:hover { color: var(--primary-blue); }
+.mobile-menu-toggle { display: none; flex-direction: column; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 1001; }
+.hamburger-line { width: 25px; height: 2px; background: var(--primary-blue); margin: 3px 0; transition: 0.2s ease; display: block; }
+.btn { display: inline-block; padding: 0.875rem 2rem; font-family: var(--font-heading); border: 2px solid transparent; border-radius: var(--radius-sm); cursor: pointer; transition: 0.4s ease; text-decoration: none; font-size: 1rem; }
+.btn-primary { background: var(--primary-blue); color: var(--white); border-color: var(--primary-blue); }
+.btn-primary:hover { background: var(--secondary-blue); border-color: var(--secondary-blue); color: var(--white); transform: translateY(-2px); }
+.btn-white { background: var(--white); color: var(--primary-blue); border-color: var(--white); }
+.btn-white:hover { background: transparent; color: var(--white); transform: translateY(-2px); }
+.page-hero { background: var(--primary-blue); padding: var(--space-xl) var(--space-md); text-align: center; position: relative; overflow: hidden; }
+.page-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.12; }
+.page-hero-inner { position: relative; z-index: 2; }
+.page-hero h1 { color: var(--white); margin-bottom: var(--space-sm); }
+.page-hero-subtitle { font-size: 1.2rem; max-width: 780px; margin: 0 auto; opacity: 0.9; color: var(--white); }
+.service-block { display: grid; grid-template-columns: 180px 1fr; gap: var(--space-lg); align-items: start; padding: var(--space-lg) 0; border-bottom: 1px solid var(--border-color); }
+.service-block:last-of-type { border-bottom: none; }
+.service-number-large { font-family: var(--font-heading); font-size: 6rem; color: var(--light-blue); line-height: 1; font-weight: bold; }
+.service-block-title { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--primary-blue); margin-bottom: var(--space-sm); }
+.service-lead { font-size: 1.1rem; color: var(--text-dark); margin-bottom: var(--space-md); line-height: 1.7; }
+.service-areas { background: var(--off-white); border-left: 4px solid var(--secondary-blue); padding: var(--space-md); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin-bottom: var(--space-md); }
+.service-areas h4 { font-family: var(--font-heading); color: var(--primary-blue); margin-bottom: var(--space-sm); font-size: 1rem; }
+.service-areas ul { list-style: none; padding: 0; margin: 0; }
+.service-areas li { padding: 0.3rem 0 0.3rem 1.5rem; position: relative; color: var(--text-light); }
+.service-areas li::before { content: '—'; position: absolute; left: 0; color: var(--secondary-blue); }
+.service-outcome { background: var(--primary-blue); color: var(--white); padding: var(--space-md); border-radius: var(--radius-md); }
+.service-outcome h4 { font-family: var(--font-heading); color: var(--white); margin-bottom: 0.5rem; font-size: 1rem; }
+.service-outcome p { margin: 0; opacity: 0.9; }
+.cta-section { padding: var(--space-xl) var(--space-md); text-align: center; }
+.cta-heading { color: var(--white); margin-bottom: var(--space-md); }
+.cta-text { font-size: 1.2rem; max-width: 750px; margin: 0 auto var(--space-md); opacity: 0.9; }
+.site-footer { background: var(--primary-blue); color: var(--white); padding: var(--space-xl) 0 var(--space-md); }
+.footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-lg); margin-bottom: var(--space-lg); }
+.footer-logo { height: 40px; margin-bottom: var(--space-sm); filter: brightness(0) invert(1); }
+.footer-name { font-family: var(--font-heading); font-size: 1.3rem; color: var(--white); margin-bottom: 0.25rem; }
+.footer-title { opacity: 0.85; font-size: 0.95rem; margin-bottom: 0.25rem; }
+.footer-location { opacity: 0.7; font-size: 0.9rem; }
+.site-footer h4 { font-family: var(--font-heading); color: var(--white); margin-bottom: var(--space-sm); font-size: 1.1rem; }
+.site-footer ul { list-style: none; }
+.site-footer li { margin-bottom: 0.5rem; }
+.site-footer a { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+.site-footer a:hover { color: var(--white); }
+.footer-bottom { text-align: center; padding-top: var(--space-md); border-top: 1px solid rgba(255,255,255,0.2); opacity: 0.7; font-size: 0.9rem; }
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 968px) {
+.nav-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 400px; height: 100vh; background: var(--white); flex-direction: column; padding: 100px var(--space-md) var(--space-md); transition: 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.1); align-items: flex-start; gap: var(--space-md); overflow-y: auto; }
+.nav-menu.active { right: 0; }
+.nav-links { flex-direction: column; width: 100%; gap: var(--space-sm); }
+.mobile-menu-toggle { display: flex; }
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+.service-block { grid-template-columns: 1fr; gap: var(--space-sm); }
+.service-number-large { font-size: 4rem; }
+.footer-content { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+}
+@media (max-width: 640px) {
+.footer-content { grid-template-columns: 1fr; text-align: center; }
+.footer-logo { margin: 0 auto var(--space-sm); }
+.btn { width: 100%; max-width: 300px; text-align: center; display: block; margin: 0 auto; }
+}
+</style>
 </head>
 <body>
-    <header class="site-header">
-        <nav class="main-nav" role="navigation" aria-label="Main navigation">
-            <div class="nav-container">
-                <a href="./index.html" class="logo-link">
-                    <img src=assets/suzanne.png alt="SuZanne Cottrell Literary Marketing Strategist Logo" class="logo-img">
-                </a>
-                
-                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
 
-                <div class="nav-menu">
-                    <ul class="nav-links">
-                        <li><a href="./index.html" class="nav-link">Home</a></li>
-                        <li><a href="./about.html" class="nav-link">About</a></li>
-                        <li><a href="./services.html" class="nav-link active">Services</a></li>
-                        <li><a href="./consultation.html" class="nav-link">Book a Consultation</a></li>
-                        <li><a href="./contact.html" class="nav-link">Contact</a></li>
-                    </ul>
-                    <a href="./contact.html" class="btn btn-primary nav-cta">Let's Work Together</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+<header class="site-header">
+<nav class="main-nav">
+<div class="nav-container">
+<a href="index.html"><img src="suzanne.png" alt="SuZanne Cottrell Logo" class="logo-img"></a>
+<button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+</button>
+<div class="nav-menu">
+<ul class="nav-links">
+<li><a href="index.html" class="nav-link">Home</a></li>
+<li><a href="about.html" class="nav-link">About</a></li>
+<li><a href="services.html" class="nav-link active">Services</a></li>
+<li><a href="consultation.html" class="nav-link">Book a Consultation</a></li>
+<li><a href="contact.html" class="nav-link">Contact</a></li>
+</ul>
+<a href="contact.html" class="btn btn-primary">Let's Work Together</a>
+</div>
+</div>
+</nav>
+</header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="page-hero" style="background-image: linear-gradient(rgba(30, 58, 95, 0.8), rgba(30, 58, 95, 0.9)), url('assets/suzanne.png');">
-            <div class="page-hero-content">
-                <h1 class="page-hero-title fade-up">Strategic Marketing for Authors Ready to Be Seen.</h1>
-                <p class="page-hero-subtitle fade-up">Whether you are preparing to launch a book, strengthen your author brand, or find a clearer path toward reaching your audience, each service is designed to bring greater strategy and direction to your marketing efforts.</p>
-            </div>
-        </section>
+<main>
 
-        <!-- Service 1 -->
-        <section class="section service-detail">
-            <div class="container">
-                <div class="service-content fade-up">
-                    <span class="service-number">01</span>
-                    <h2 class="service-heading">Literary Marketing Strategy</h2>
-                    <p class="service-lead">Develop a comprehensive and personalized marketing direction based on the author's goals, book, audience, and current position.</p>
-                    
-                    <div class="service-areas">
-                        <h3>Possible areas include:</h3>
-                        <ul>
-                            <li>Marketing direction</li>
-                            <li>Audience identification</li>
-                            <li>Book positioning</li>
-                            <li>Visibility opportunities</li>
-                            <li>Promotional planning</li>
-                            <li>Strategic recommendations</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-outcome">
-                        <h3>Outcome:</h3>
-                        <p>A clearer understanding of where to focus your marketing efforts and how to move forward with purpose.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="page-hero">
+<img src="suzanne.png" alt="" class="page-hero-bg">
+<div class="page-hero-inner">
+<h1 class="fade-up">Strategic Marketing for Authors Ready to Be Seen.</h1>
+<p class="page-hero-subtitle fade-up">Whether you are preparing to launch a book, strengthen your author brand, or find a clearer path toward reaching your audience, each service is designed to bring greater strategy and direction to your marketing efforts.</p>
+</div>
+</section>
 
-        <!-- Service 2 -->
-        <section class="section service-detail bg-light">
-            <div class="container">
-                <div class="service-content fade-up">
-                    <span class="service-number">02</span>
-                    <h2 class="service-heading">Author Brand Strategy</h2>
-                    <p class="service-lead">Help authors create a stronger and more recognizable professional identity.</p>
-                    
-                    <div class="service-areas">
-                        <h3>Possible areas include:</h3>
-                        <ul>
-                            <li>Brand positioning</li>
-                            <li>Author messaging</li>
-                            <li>Personal brand clarity</li>
-                            <li>Audience perception</li>
-                            <li>Brand consistency</li>
-                            <li>Long-term author presence</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-outcome">
-                        <h3>Outcome:</h3>
-                        <p>A more cohesive and intentional author identity that supports your current and future work.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="section">
+<div class="container">
 
-        <!-- Service 3 -->
-        <section class="section service-detail">
-            <div class="container">
-                <div class="service-content fade-up">
-                    <span class="service-number">03</span>
-                    <h2 class="service-heading">Book Launch Strategy</h2>
-                    <p class="service-lead">Develop a strategic approach for authors preparing to introduce their book to the market.</p>
-                    
-                    <div class="service-areas">
-                        <h3>Possible areas include:</h3>
-                        <ul>
-                            <li>Pre-launch planning</li>
-                            <li>Launch strategy</li>
-                            <li>Promotional opportunities</li>
-                            <li>Audience engagement</li>
-                            <li>Visibility planning</li>
-                            <li>Post-launch direction</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-outcome">
-                        <h3>Outcome:</h3>
-                        <p>A structured plan designed to help you approach your book launch with greater confidence and direction.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="service-block fade-up">
+<div><div class="service-number-large">01</div></div>
+<div>
+<h2 class="service-block-title">Literary Marketing Strategy</h2>
+<p class="service-lead">Develop a comprehensive and personalized marketing direction based on your goals, book, audience, and current position.</p>
+<div class="service-areas">
+<h4>Possible areas include:</h4>
+<ul>
+<li>Marketing direction</li>
+<li>Audience identification</li>
+<li>Book positioning</li>
+<li>Visibility opportunities</li>
+<li>Promotional planning</li>
+<li>Strategic recommendations</li>
+</ul>
+</div>
+<div class="service-outcome">
+<h4>Outcome</h4>
+<p>A clearer understanding of where to focus your marketing efforts and how to move forward with purpose.</p>
+</div>
+</div>
+</div>
 
-        <!-- Service 4 -->
-        <section class="section service-detail bg-light">
-            <div class="container">
-                <div class="service-content fade-up">
-                    <span class="service-number">04</span>
-                    <h2 class="service-heading">Author Visibility Strategy</h2>
-                    <p class="service-lead">Focus on helping authors identify meaningful opportunities to increase awareness and reach.</p>
-                    
-                    <div class="service-areas">
-                        <h3>Possible areas include:</h3>
-                        <ul>
-                            <li>Visibility opportunities</li>
-                            <li>Audience growth</li>
-                            <li>Online presence</li>
-                            <li>Strategic positioning</li>
-                            <li>Content direction</li>
-                            <li>Promotional consistency</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-outcome">
-                        <h3>Outcome:</h3>
-                        <p>A clearer path toward building a stronger and more sustainable presence.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="service-block fade-up">
+<div><div class="service-number-large">02</div></div>
+<div>
+<h2 class="service-block-title">Author Brand Strategy</h2>
+<p class="service-lead">Help authors create a stronger and more recognizable professional identity that supports their work now and into the future.</p>
+<div class="service-areas">
+<h4>Possible areas include:</h4>
+<ul>
+<li>Brand positioning</li>
+<li>Author messaging</li>
+<li>Personal brand clarity</li>
+<li>Audience perception</li>
+<li>Brand consistency</li>
+<li>Long-term author presence</li>
+</ul>
+</div>
+<div class="service-outcome">
+<h4>Outcome</h4>
+<p>A more cohesive and intentional author identity that supports your current and future work.</p>
+</div>
+</div>
+</div>
 
-        <!-- Service 5 -->
-        <section class="section service-detail">
-            <div class="container">
-                <div class="service-content fade-up">
-                    <span class="service-number">05</span>
-                    <h2 class="service-heading">Personalized Literary Marketing Consultation</h2>
-                    <p class="service-lead">For authors who need strategic guidance, clarity, or a professional perspective.</p>
-                    
-                    <div class="service-areas">
-                        <h3>The consultation provides an opportunity to discuss:</h3>
-                        <ul>
-                            <li>Current marketing challenges</li>
-                            <li>Book promotion</li>
-                            <li>Author visibility</li>
-                            <li>Brand direction</li>
-                            <li>Audience strategy</li>
-                            <li>Next steps</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-outcome">
-                        <h3>Outcome:</h3>
-                        <p>Practical strategic guidance tailored to your current situation and goals.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="service-block fade-up">
+<div><div class="service-number-large">03</div></div>
+<div>
+<h2 class="service-block-title">Book Launch Strategy</h2>
+<p class="service-lead">Develop a strategic approach for authors preparing to introduce their book to the market with confidence and clarity.</p>
+<div class="service-areas">
+<h4>Possible areas include:</h4>
+<ul>
+<li>Pre-launch planning</li>
+<li>Launch strategy</li>
+<li>Promotional opportunities</li>
+<li>Audience engagement</li>
+<li>Visibility planning</li>
+<li>Post-launch direction</li>
+</ul>
+</div>
+<div class="service-outcome">
+<h4>Outcome</h4>
+<p>A structured plan designed to help you approach your book launch with greater confidence and direction.</p>
+</div>
+</div>
+</div>
 
-        <!-- Services CTA -->
-        <section class="section cta-section bg-primary">
-            <div class="container text-center">
-                <p class="cta-text-large fade-up">Every author and project is different. Get in touch to discuss your goals and discover which type of strategic support may be right for you.</p>
-                <a href="./contact.html" class="btn btn-white fade-up">Contact Me</a>
-            </div>
-        </section>
-    </main>
+<div class="service-block fade-up">
+<div><div class="service-number-large">04</div></div>
+<div>
+<h2 class="service-block-title">Author Visibility Strategy</h2>
+<p class="service-lead">Focus on helping authors identify meaningful opportunities to increase awareness and reach the right readers.</p>
+<div class="service-areas">
+<h4>Possible areas include:</h4>
+<ul>
+<li>Visibility opportunities</li>
+<li>Audience growth</li>
+<li>Online presence</li>
+<li>Strategic positioning</li>
+<li>Content direction</li>
+<li>Promotional consistency</li>
+</ul>
+</div>
+<div class="service-outcome">
+<h4>Outcome</h4>
+<p>A clearer path toward building a stronger and more sustainable presence.</p>
+</div>
+</div>
+</div>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <p class="footer-name">SuZanne Cottrell</p>
-                    <p class="footer-title">Literary Marketing Strategist</p>
-                    <p class="footer-location">New York, USA</p>
-                </div>
-                
-                <div class="footer-nav">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./about.html">About</a></li>
-                        <li><a href="./services.html">Services</a></li>
-                        <li><a href="./consultation.html">Book a Consultation</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                    </ul>
-                </div>
+<div class="service-block fade-up">
+<div><div class="service-number-large">05</div></div>
+<div>
+<h2 class="service-block-title">Personalized Literary Marketing Consultation</h2>
+<p class="service-lead">For authors who need strategic guidance, clarity, or a professional perspective on their current situation.</p>
+<div class="service-areas">
+<h4>The consultation provides an opportunity to discuss:</h4>
+<ul>
+<li>Current marketing challenges</li>
+<li>Book promotion</li>
+<li>Author visibility</li>
+<li>Brand direction</li>
+<li>Audience strategy</li>
+<li>Next steps</li>
+</ul>
+</div>
+<div class="service-outcome">
+<h4>Outcome</h4>
+<p>Practical strategic guidance tailored to your current situation and goals.</p>
+</div>
+</div>
+</div>
 
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <a href="mailto:suzannecottrell2@gmail.com">suzannecottrell2@gmail.com</a>
-                </div>
+</div>
+</section>
 
-                <div class="footer-legal">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="./terms.html">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 SuZanne Cottrell. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+<section class="section cta-section bg-primary">
+<div class="container">
+<h2 class="cta-heading fade-up">Every Author and Project Is Different.</h2>
+<p class="cta-text fade-up">Get in touch to discuss your goals and discover which type of strategic support may be right for you.</p>
+<a href="contact.html" class="btn btn-white fade-up">Contact Me</a>
+</div>
+</section>
 
-    <script src="./js/script.js"></script>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<div class="footer-content">
+<div>
+<img src="suzanne.png" alt="SuZanne Cottrell" class="footer-logo">
+<p class="footer-name">SuZanne Cottrell</p>
+<p class="footer-title">Literary Marketing Strategist</p>
+<p class="footer-location">New York, USA</p>
+</div>
+<div><h4>Navigation</h4><ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="consultation.html">Book a Consultation</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul></div>
+<div><h4>Contact</h4><a href="mailto:suzannecottrell2@gmail.com">suzannecottrell2@gmail.com</a></div>
+<div><h4>Legal</h4><ul>
+<li><a href="privacy-policy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms & Conditions</a></li>
+</ul></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 SuZanne Cottrell. All Rights Reserved.</p></div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+var menuToggle = document.querySelector('.mobile-menu-toggle');
+var navMenu = document.querySelector('.nav-menu');
+if (menuToggle && navMenu) {
+menuToggle.addEventListener('click', function() {
+var isExpanded = this.getAttribute('aria-expanded') === 'true';
+this.setAttribute('aria-expanded', String(!isExpanded));
+this.classList.toggle('active');
+navMenu.classList.toggle('active');
+document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+});
+}
+document.querySelectorAll('.nav-link').forEach(function(link) {
+link.addEventListener('click', function() { if (navMenu.classList.contains('active')) { menuToggle.click(); } });
+});
+var observer = new IntersectionObserver(function(entries) {
+entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+});
+</script>
 </body>
 </html>
