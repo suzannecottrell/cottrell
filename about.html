@@ -2,166 +2,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about SuZanne Cottrell, Literary Marketing Strategist based in New York, helping authors internationally build visibility and meaningful connections with readers.">
-    <meta name="keywords" content="About SuZanne Cottrell, Literary Marketing Strategist, Author Marketing Expert, Book Marketing Consultant New York">
-    <title>About SuZanne Cottrell | Literary Marketing Strategist</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn about SuZanne Cottrell, Literary Marketing Strategist based in New York, helping authors internationally build visibility and meaningful connections with readers.">
+<title>About SuZanne Cottrell | Literary Marketing Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+<style>
+:root {
+--primary-blue: #1e3a5f;
+--secondary-blue: #4a6fa5;
+--light-blue: #e8f0f8;
+--white: #ffffff;
+--off-white: #fafbfc;
+--text-dark: #2c3e50;
+--text-light: #5a6c7d;
+--border-color: #e0e6ed;
+--font-heading: Georgia, 'Times New Roman', serif;
+--font-body: 'Bree Serif', Georgia, serif;
+--space-xs: 0.5rem;
+--space-sm: 1rem;
+--space-md: 2rem;
+--space-lg: 4rem;
+--space-xl: 6rem;
+--radius-sm: 4px;
+--radius-md: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--text-dark); line-height: 1.7; background: var(--white); overflow-x: hidden; }
+h1, h2, h3 { font-family: var(--font-heading); font-weight: 400; color: var(--primary-blue); margin-bottom: var(--space-sm); line-height: 1.3; }
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+h3 { font-size: clamp(1.2rem, 3vw, 1.6rem); }
+p { margin-bottom: var(--space-sm); }
+a { color: var(--secondary-blue); text-decoration: none; transition: 0.2s ease; }
+a:hover { color: var(--primary-blue); }
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); }
+.container.narrow { max-width: 860px; }
+.section { padding: var(--space-xl) 0; }
+.bg-light { background: var(--off-white); }
+.bg-primary { background: var(--primary-blue); color: var(--white); }
+.bg-primary h2 { color: var(--white); }
+.text-center { text-align: center; }
+.site-header { position: sticky; top: 0; z-index: 1000; background: var(--white); box-shadow: 0 2px 10px rgba(30,58,95,0.1); }
+.main-nav { padding: var(--space-sm) 0; }
+.nav-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); display: flex; justify-content: space-between; align-items: center; }
+.logo-img { height: 55px; width: auto; max-width: 220px; object-fit: contain; }
+.nav-menu { display: flex; align-items: center; gap: var(--space-md); }
+.nav-links { display: flex; list-style: none; gap: var(--space-md); }
+.nav-link { font-family: var(--font-heading); color: var(--text-dark); position: relative; padding: 0.5rem 0; font-size: 1rem; }
+.nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary-blue); transition: 0.4s ease; }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-link:hover { color: var(--primary-blue); }
+.mobile-menu-toggle { display: none; flex-direction: column; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 1001; }
+.hamburger-line { width: 25px; height: 2px; background: var(--primary-blue); margin: 3px 0; transition: 0.2s ease; display: block; }
+.btn { display: inline-block; padding: 0.875rem 2rem; font-family: var(--font-heading); border: 2px solid transparent; border-radius: var(--radius-sm); cursor: pointer; transition: 0.4s ease; text-decoration: none; font-size: 1rem; }
+.btn-primary { background: var(--primary-blue); color: var(--white); border-color: var(--primary-blue); }
+.btn-primary:hover { background: var(--secondary-blue); border-color: var(--secondary-blue); color: var(--white); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(30,58,95,0.3); }
+.btn-white { background: var(--white); color: var(--primary-blue); border-color: var(--white); }
+.btn-white:hover { background: transparent; color: var(--white); transform: translateY(-2px); }
+.page-hero { background: var(--primary-blue); padding: var(--space-xl) var(--space-md); text-align: center; position: relative; overflow: hidden; }
+.page-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; }
+.page-hero-inner { position: relative; z-index: 2; }
+.page-hero h1 { color: var(--white); margin-bottom: var(--space-sm); }
+.page-hero-subtitle { font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9; color: var(--white); }
+.two-column { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); align-items: center; }
+.image-wrapper { overflow: hidden; border-radius: var(--radius-md); box-shadow: 0 20px 40px rgba(30,58,95,0.15); }
+.profile-image { width: 100%; height: 520px; object-fit: cover; object-position: top; transition: 0.6s ease; display: block; }
+.image-wrapper:hover .profile-image { transform: scale(1.05); }
+.section-heading { margin-bottom: var(--space-md); position: relative; padding-bottom: var(--space-sm); }
+.section-heading::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background: var(--secondary-blue); }
+.text-center .section-heading::after { left: 50%; transform: translateX(-50%); }
+.lead-text { font-size: 1.3rem; line-height: 1.8; color: var(--primary-blue); margin-bottom: var(--space-md); font-family: var(--font-heading); font-style: italic; }
+.story-text { font-size: 1.05rem; color: var(--text-light); line-height: 1.8; margin-bottom: var(--space-md); }
+.mission-vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.mission-box { background: var(--primary-blue); color: var(--white); padding: var(--space-md); border-radius: var(--radius-md); }
+.mission-box h2 { color: var(--white); font-size: 1.8rem; }
+.mission-box p { opacity: 0.9; font-size: 1.05rem; margin: 0; }
+.vision-box { background: var(--light-blue); padding: var(--space-md); border-radius: var(--radius-md); }
+.vision-box h2 { font-size: 1.8rem; }
+.vision-box p { font-size: 1.05rem; margin: 0; color: var(--text-dark); }
+.beliefs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+.belief-card { padding: var(--space-md); border-radius: var(--radius-md); background: var(--white); box-shadow: 0 4px 20px rgba(30,58,95,0.08); border-left: 4px solid var(--secondary-blue); transition: 0.4s ease; }
+.belief-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(30,58,95,0.13); }
+.belief-card h3 { color: var(--primary-blue); margin-bottom: var(--space-xs); font-size: 1.2rem; }
+.belief-card p { color: var(--text-light); margin: 0; }
+.cta-section { padding: var(--space-xl) var(--space-md); text-align: center; }
+.cta-heading { color: var(--white); margin-bottom: var(--space-md); }
+.site-footer { background: var(--primary-blue); color: var(--white); padding: var(--space-xl) 0 var(--space-md); }
+.footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-lg); margin-bottom: var(--space-lg); }
+.footer-logo { height: 40px; margin-bottom: var(--space-sm); filter: brightness(0) invert(1); }
+.footer-name { font-family: var(--font-heading); font-size: 1.3rem; color: var(--white); margin-bottom: 0.25rem; }
+.footer-title { opacity: 0.85; font-size: 0.95rem; margin-bottom: 0.25rem; }
+.footer-location { opacity: 0.7; font-size: 0.9rem; }
+.site-footer h4 { font-family: var(--font-heading); color: var(--white); margin-bottom: var(--space-sm); font-size: 1.1rem; }
+.site-footer ul { list-style: none; }
+.site-footer li { margin-bottom: 0.5rem; }
+.site-footer a { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+.site-footer a:hover { color: var(--white); }
+.footer-bottom { text-align: center; padding-top: var(--space-md); border-top: 1px solid rgba(255,255,255,0.2); opacity: 0.7; font-size: 0.9rem; }
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 968px) {
+.nav-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 400px; height: 100vh; background: var(--white); flex-direction: column; padding: 100px var(--space-md) var(--space-md); transition: 0.4s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.1); align-items: flex-start; gap: var(--space-md); overflow-y: auto; }
+.nav-menu.active { right: 0; }
+.nav-links { flex-direction: column; width: 100%; gap: var(--space-sm); }
+.mobile-menu-toggle { display: flex; }
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+.two-column { grid-template-columns: 1fr; gap: var(--space-md); }
+.mission-vision-grid { grid-template-columns: 1fr; }
+.footer-content { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+}
+@media (max-width: 640px) {
+.beliefs-grid { grid-template-columns: 1fr; }
+.footer-content { grid-template-columns: 1fr; text-align: center; }
+.footer-logo { margin: 0 auto var(--space-sm); }
+.btn { width: 100%; max-width: 300px; text-align: center; display: block; margin: 0 auto; }
+.profile-image { height: 350px; }
+}
+</style>
 </head>
 <body>
-    <header class="site-header">
-        <nav class="main-nav" role="navigation" aria-label="Main navigation">
-            <div class="nav-container">
-                <a href="./index.html" class="logo-link">
-                    <img src="assets/suzanne.png" alt="SuZanne Cottrell Literary Marketing Strategist Logo" class="logo-img">
-                </a>
-                
-                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
 
-                <div class="nav-menu">
-                    <ul class="nav-links">
-                        <li><a href="./index.html" class="nav-link">Home</a></li>
-                        <li><a href="./about.html" class="nav-link active">About</a></li>
-                        <li><a href="./services.html" class="nav-link">Services</a></li>
-                        <li><a href="./consultation.html" class="nav-link">Book a Consultation</a></li>
-                        <li><a href="./contact.html" class="nav-link">Contact</a></li>
-                    </ul>
-                    <a href="./contact.html" class="btn btn-primary nav-cta">Let's Work Together</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+<header class="site-header">
+<nav class="main-nav">
+<div class="nav-container">
+<a href="index.html"><img src="suzanne.png" alt="SuZanne Cottrell Logo" class="logo-img"></a>
+<button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+</button>
+<div class="nav-menu">
+<ul class="nav-links">
+<li><a href="index.html" class="nav-link">Home</a></li>
+<li><a href="about.html" class="nav-link active">About</a></li>
+<li><a href="services.html" class="nav-link">Services</a></li>
+<li><a href="consultation.html" class="nav-link">Book a Consultation</a></li>
+<li><a href="contact.html" class="nav-link">Contact</a></li>
+</ul>
+<a href="contact.html" class="btn btn-primary">Let's Work Together</a>
+</div>
+</div>
+</nav>
+</header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="page-hero" style="background-image: linear-gradient(rgba(30, 58, 95, 0.8), rgba(30, 58, 95, 0.9)), url('assets/suzanne.png');">
-            <div class="page-hero-content">
-                <h1 class="page-hero-title fade-up">Behind the Strategy</h1>
-                <p class="page-hero-subtitle fade-up">A thoughtful approach to helping authors build visibility, clarity, and meaningful connections with readers.</p>
-            </div>
-        </section>
+<main>
 
-        <!-- Story Section -->
-        <section class="section story-section">
-            <div class="container narrow">
-                <div class="story-content fade-up">
-                    <p class="lead-text">SuZanne Cottrell is a Literary Marketing Strategist based in New York, working with authors internationally. Her work is centered on one core belief: a great book deserves the opportunity to reach the people who will value it.</p>
-                    
-                    <p>The publishing world is filled with talented authors and meaningful stories, yet visibility can often be one of the greatest challenges after the writing is complete. SuZanne works at the intersection of literature, strategy, branding, and audience growth to help authors approach that challenge with greater clarity.</p>
-                    
-                    <p>Her approach goes beyond simply promoting a book. She looks at the bigger picture: the author's goals, the book's positioning, the intended audience, and the opportunities available to create a stronger and more sustainable presence.</p>
-                    
-                    <p>Working with authors across genres and publishing journeys, SuZanne believes that effective literary marketing should never feel like a one-size-fits-all formula. Every book has its own identity. Every author has a different story. Every audience responds differently. Strategy should reflect that.</p>
-                </div>
-            </div>
-        </section>
+<section class="page-hero">
+<img src="suzanne.png" alt="" class="page-hero-bg">
+<div class="page-hero-inner">
+<h1 class="fade-up">Behind the Strategy</h1>
+<p class="page-hero-subtitle fade-up">A thoughtful approach to helping authors build visibility, clarity, and meaningful connections with readers.</p>
+</div>
+</section>
 
-        <!-- Mission & Vision -->
-        <section class="section bg-light">
-            <div class="container">
-                <div class="two-column">
-                    <div class="column fade-up">
-                        <div class="mission-box">
-                            <h2 class="section-heading">My Mission</h2>
-                            <p>To help authors approach marketing with greater clarity, confidence, and purpose by developing strategies that strengthen visibility, build meaningful audience connections, and support long-term author growth.</p>
-                        </div>
-                    </div>
-                    <div class="column fade-up" style="transition-delay: 0.2s;">
-                        <div class="vision-box">
-                            <h2 class="section-heading">My Vision</h2>
-                            <p>To contribute to a literary landscape where talented authors have access to thoughtful marketing strategies that help their work reach beyond publication and into meaningful connection with readers.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="section">
+<div class="container">
+<div class="two-column">
+<div class="fade-up">
+<div class="image-wrapper">
+<img src="suzanne.png" alt="SuZanne Cottrell, Literary Marketing Strategist" class="profile-image">
+</div>
+</div>
+<div class="fade-up">
+<p class="lead-text">A great book deserves the opportunity to reach the people who will value it.</p>
+<p class="story-text">SuZanne Cottrell is a Literary Marketing Strategist based in New York, working with authors internationally. Her work is centered on one core belief: a great book deserves the opportunity to reach the people who will value it.</p>
+<p class="story-text">The publishing world is filled with talented authors and meaningful stories, yet visibility can often be one of the greatest challenges after the writing is complete. SuZanne works at the intersection of literature, strategy, branding, and audience growth to help authors approach that challenge with greater clarity.</p>
+<p class="story-text">Her approach goes beyond simply promoting a book. She looks at the bigger picture: the author's goals, the book's positioning, the intended audience, and the opportunities available to create a stronger and more sustainable presence.</p>
+<p class="story-text">Working with authors across genres and publishing journeys, SuZanne believes that effective literary marketing should never feel like a one-size-fits-all formula. Every book has its own identity. Every author has a different story. Every audience responds differently. Strategy should reflect that.</p>
+</div>
+</div>
+</div>
+</section>
 
-        <!-- What I Believe -->
-        <section class="section beliefs-section">
-            <div class="container">
-                <h2 class="section-heading text-center fade-up">What I Believe</h2>
-                
-                <div class="beliefs-grid">
-                    <div class="belief-card fade-up">
-                        <h3>Every Author Has a Unique Story</h3>
-                        <p>Marketing should highlight what makes an author and their work distinctive.</p>
-                    </div>
-                    
-                    <div class="belief-card fade-up" style="transition-delay: 0.1s;">
-                        <h3>Visibility Should Be Intentional</h3>
-                        <p>Being everywhere is not the same as being seen by the right people.</p>
-                    </div>
-                    
-                    <div class="belief-card fade-up" style="transition-delay: 0.2s;">
-                        <h3>Strategy Creates Direction</h3>
-                        <p>Clear goals and thoughtful decisions are more valuable than random marketing activity.</p>
-                    </div>
-                    
-                    <div class="belief-card fade-up" style="transition-delay: 0.3s;">
-                        <h3>Connection Matters</h3>
-                        <p>The strongest marketing creates genuine relationships between authors and readers.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="section bg-light">
+<div class="container">
+<div class="mission-vision-grid">
+<div class="mission-box fade-up">
+<h2>My Mission</h2>
+<p>To help authors approach marketing with greater clarity, confidence, and purpose by developing strategies that strengthen visibility, build meaningful audience connections, and support long-term author growth.</p>
+</div>
+<div class="vision-box fade-up">
+<h2>My Vision</h2>
+<p>To contribute to a literary landscape where talented authors have access to thoughtful marketing strategies that help their work reach beyond publication and into meaningful connection with readers.</p>
+</div>
+</div>
+</div>
+</section>
 
-        <!-- Final CTA -->
-        <section class="section cta-section bg-primary">
-            <div class="container text-center">
-                <h2 class="cta-heading fade-up">Let's Build Your Next Chapter Strategically.</h2>
-                <a href="./services.html" class="btn btn-white fade-up">Explore My Services</a>
-            </div>
-        </section>
-    </main>
+<section class="section">
+<div class="container">
+<h2 class="section-heading text-center fade-up">What I Believe</h2>
+<div class="beliefs-grid">
+<div class="belief-card fade-up">
+<h3>Every Author Has a Unique Story</h3>
+<p>Marketing should highlight what makes an author and their work distinctive.</p>
+</div>
+<div class="belief-card fade-up">
+<h3>Visibility Should Be Intentional</h3>
+<p>Being everywhere is not the same as being seen by the right people.</p>
+</div>
+<div class="belief-card fade-up">
+<h3>Strategy Creates Direction</h3>
+<p>Clear goals and thoughtful decisions are more valuable than random marketing activity.</p>
+</div>
+<div class="belief-card fade-up">
+<h3>Connection Matters</h3>
+<p>The strongest marketing creates genuine relationships between authors and readers.</p>
+</div>
+</div>
+</div>
+</section>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <p class="footer-name">SuZanne Cottrell</p>
-                    <p class="footer-title">Literary Marketing Strategist</p>
-                    <p class="footer-location">New York, USA</p>
-                </div>
-                
-                <div class="footer-nav">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./about.html">About</a></li>
-                        <li><a href="./services.html">Services</a></li>
-                        <li><a href="./consultation.html">Book a Consultation</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                    </ul>
-                </div>
+<section class="section cta-section bg-primary">
+<div class="container">
+<h2 class="cta-heading fade-up">Let's Build Your Next Chapter Strategically.</h2>
+<a href="services.html" class="btn btn-white fade-up">Explore My Services</a>
+</div>
+</section>
 
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <a href="mailto:suzannecottrell2@gmail.com">suzannecottrell2@gmail.com</a>
-                </div>
+</main>
 
-                <div class="footer-legal">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="./terms.html">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 SuZanne Cottrell. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-content">
+<div>
+<img src="suzanne.png" alt="SuZanne Cottrell" class="footer-logo">
+<p class="footer-name">SuZanne Cottrell</p>
+<p class="footer-title">Literary Marketing Strategist</p>
+<p class="footer-location">New York, USA</p>
+</div>
+<div>
+<h4>Navigation</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="consultation.html">Book a Consultation</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4>Contact</h4>
+<a href="mailto:suzannecottrell2@gmail.com">suzannecottrell2@gmail.com</a>
+</div>
+<div>
+<h4>Legal</h4>
+<ul>
+<li><a href="privacy-policy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms & Conditions</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 SuZanne Cottrell. All Rights Reserved.</p></div>
+</div>
+</footer>
 
-    <script src="./js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+var menuToggle = document.querySelector('.mobile-menu-toggle');
+var navMenu = document.querySelector('.nav-menu');
+if (menuToggle && navMenu) {
+menuToggle.addEventListener('click', function() {
+var isExpanded = this.getAttribute('aria-expanded') === 'true';
+this.setAttribute('aria-expanded', String(!isExpanded));
+this.classList.toggle('active');
+navMenu.classList.toggle('active');
+document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+});
+}
+document.querySelectorAll('.nav-link').forEach(function(link) {
+link.addEventListener('click', function() { if (navMenu.classList.contains('active')) { menuToggle.click(); } });
+});
+var observer = new IntersectionObserver(function(entries) {
+entries.forEach(function(entry) {
+if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+});
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+});
+</script>
 </body>
 </html>
